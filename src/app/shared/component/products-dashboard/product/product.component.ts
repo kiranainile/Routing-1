@@ -25,7 +25,8 @@ export class ProductComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.getProduct();
+    this.getProduct()
+   
   }
 
   getProduct() {
@@ -74,8 +75,18 @@ export class ProductComponent implements OnInit {
     
 
     }
+    redirectToEDit(){
+      this._router.navigate(['edit'],{
+        queryParamsHandling:'preserve',
+        relativeTo:this._routes
+
+      })
+      
+    }
+
+    }
     
 
     
 
-  }
+  

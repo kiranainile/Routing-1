@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
+import { MatChipsModule } from '@angular/material/chips';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -16,6 +17,7 @@ import { ProductComponent } from './shared/component/products-dashboard/product/
 import { ProductFormComponent } from './shared/component/products-dashboard/product-form/product-form.component';
 
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatCardModule } from '@angular/material/card';
 
 import { MatDialogModule } from '@angular/material/dialog';
 
@@ -23,6 +25,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { GetConfirmationComponent } from './shared/component/get-confirmation/get-confirmation.component';
+import { HttpClientModule } from '@angular/common/http';
+import { UserFormComponent } from './shared/component/user-dashboard/user-form/user-form.component';
+import { UserDetailsComponent } from './shared/component/user-dashboard/user-details/user-details.component';
+
 
 @NgModule({
   declarations: [
@@ -35,7 +41,9 @@ import { GetConfirmationComponent } from './shared/component/get-confirmation/ge
     ProductComponent,
 
     ProductFormComponent,
-    GetConfirmationComponent
+    GetConfirmationComponent,
+    UserFormComponent,
+    UserDetailsComponent
   ],
 
   imports: [
@@ -47,7 +55,11 @@ import { GetConfirmationComponent } from './shared/component/get-confirmation/ge
     MatSnackBarModule,
     MatButtonModule,
     MatIconModule,
-     MatDialogModule
+     MatDialogModule,
+    HttpClientModule,
+    MatCardModule,
+    MatChipsModule
+  
   ],
 
   providers: [],

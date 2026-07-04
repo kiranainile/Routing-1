@@ -17,6 +17,8 @@ export class ProductFormComponent implements OnInit {
   productForm!:FormGroup
   productID!:string
   isInEditMode:boolean= false
+  productObj!:Iproduct
+  disableUpdateBtn:boolean=false
 
   constructor( 
     private _productService :ProductService,
@@ -30,6 +32,17 @@ export class ProductFormComponent implements OnInit {
    
     this.createProductForm()
     this.patchProductForm()
+     this._route.queryParams
+    .subscribe(res=>{
+      if(res['cr']==0){
+        this.productForm.disable()
+        this.disableUpdateBtn=true
+      }else{
+        this.productForm.enable()
+        this.disableUpdateBtn=false
+      }
+
+    })
     
 
     }
@@ -53,7 +66,6 @@ this.productID=this._route.snapshot.paramMap.get('productId')!
 
 
 }
-
     createProductForm(){
       this.productForm=new FormGroup({
         pname:new FormControl(null,[Validators.required]),
@@ -100,7 +112,6 @@ onUpdate(){
           this.productForm.reset()
       this._router.navigate(['products'])
       this.isInEditMode =false;
-
        this._snackbar.openSnackBar(res.msg);    
 
      },

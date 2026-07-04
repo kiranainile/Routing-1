@@ -1,0 +1,14 @@
+.mat-card-image{
+  width: 200px;
+  height: 200px;
+   object-fit: cover
+}
+.mat-card-image {
+  padding: 0;
+}
+
+.userBasicInfo{
+  .bg{
+    font-size: 16px;
+  }
+}

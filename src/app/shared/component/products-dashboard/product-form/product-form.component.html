@@ -43,6 +43,7 @@
       </button>
       
        <button
+       [disabled]="disableUpdateBtn"
        (click)="onUpdate()"
        *ngIf="isInEditMode"
         type="submit"
