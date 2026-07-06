@@ -28,6 +28,7 @@ import { GetConfirmationComponent } from './shared/component/get-confirmation/ge
 import { HttpClientModule } from '@angular/common/http';
 import { UserFormComponent } from './shared/component/user-dashboard/user-form/user-form.component';
 import { UserDetailsComponent } from './shared/component/user-dashboard/user-details/user-details.component';
+import { PageNotFoundComponent } from './shared/component/page-not-found/page-not-found.component';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { UserDetailsComponent } from './shared/component/user-dashboard/user-det
     ProductFormComponent,
     GetConfirmationComponent,
     UserFormComponent,
-    UserDetailsComponent
+    UserDetailsComponent,
+    PageNotFoundComponent
   ],
 
   imports: [

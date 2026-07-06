@@ -1,4 +1,4 @@
-<mat-card  class="mt-2 mb-3">
+<mat-card  class="mt-0 mb-3">
   <mat-card-content>
 
     <h3 class="fw-weight-bold">
@@ -210,13 +210,12 @@
     </label>
     </div>
 
-      <button
-        mat-raised-button
-        color="primary"
-        type="submit"
-        class="mt-4">
-        {{ isInEditMode ? 'Update User' : 'Add User' }}
+      <button  *ngIf="!isInEditMode"mat-raised-button color="primary"class="mt-4"> Add User
       </button>
+      <button 
+      (click)="onUserUpdate()"
+      
+       *ngIf="isInEditMode" mat-raised-button color="warn">Update button</button>
 
     </form>
 

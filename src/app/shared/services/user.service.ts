@@ -1,6 +1,7 @@
 import { Observable, of } from "rxjs";
 import { Ires, IUser } from "../models/user";
 import { Injectable } from "@angular/core";
+import { Iproduct } from "../models/products";
 
 
 @Injectable({
@@ -12,7 +13,7 @@ export class UserService{
   {
     userName: 'kiran Ainile',
     userId: '101',
-    userRole: 'Candidate',
+    userRole: 'Candidate', 
     profileDescription: 'Angular Developer with 3 years experience',
     profileImage: 'assets/profileImage.png',
     skills: ['Angular', 'TypeScript', 'JavaScript', 'Bootstrap'],
@@ -87,10 +88,34 @@ addUser(user:IUser):Observable<Ires<IUser>>{
     msg:`The user with id ${user.userId} is added successfully..!!!`,
     data:user
   })
+}
+updateUser(user:IUser){
+  let getIndex=this.userArr.findIndex(u=>u.userId ===user.userId)
+  this.userArr[getIndex]=user
+  return of({
+    msg:`The user with is ${user.userId} s updated successfully...!!!`,
+    data:user
+  })
 
 }
 
 
+  removeUserById(id:string):Observable<Ires<IUser>>{
+            let getIndex=this.userArr.findIndex(p=>p.userId ===id)
+            let user=this.userArr.splice(getIndex,1)
+            return of({
+                   msg:`The new product with id ${user[0].userId} is removed successfully....!!!`,
+           
+                   data:user[0]
+
+            })
+
+        }
+            
+
 }
+
+
+
 
 

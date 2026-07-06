@@ -8,6 +8,7 @@ import { ProductComponent } from "./shared/component/products-dashboard/product/
 import { ProductFormComponent } from "./shared/component/products-dashboard/product-form/product-form.component";
 import { UserFormComponent } from "./shared/component/user-dashboard/user-form/user-form.component";
 import { UserDetailsComponent } from "./shared/component/user-dashboard/user-details/user-details.component";
+import { PageNotFoundComponent } from "./shared/component/page-not-found/page-not-found.component";
 
 
 
@@ -25,43 +26,62 @@ const routes: Routes= [
    
      {
         path:'users',
-        component:UserDashboardComponent
-    },
-     {
-        path:'users/addUser',
+        component:UserDashboardComponent,
+        children:[{
+             
+        path:'addUser',
         component:UserFormComponent
     },
      {
-        path:'users/:UserId',
+        path:':userId',
         component:UserDetailsComponent
     },
      {
-        path:'users/:UserId/edit',    ///edit mode mai hoga
+        path:':userId/edit',    ///edit mode mai hoga
         component:UserFormComponent
     },
+
+        
+
+
+        ]
+    },
+    
     {
         path:'products',
-        component:ProductsDashboardComponent
-    },
-    {
-        path:'products/addProduct',
+        component:ProductsDashboardComponent,
+        children:[
+            {
+        path:'addProduct',
         component:ProductFormComponent
     },
      {
-        path:'products/:productId',
+        path:':productId',
         component:ProductComponent
     },
 
      {
-        path:'products/:productId/edit',
+        path:':productId/edit',
         component:ProductFormComponent
     },
      
+        ]
+    },
+    
     {
         path:'fairs',
         component:FairsDashboardComponent
-    }
+    },
 
+{
+    path:'page-not-found',
+    component:PageNotFoundComponent
+
+},
+{
+    path:'**',
+    redirectTo:'page-not-found'
+}
 
     
 ]
