@@ -10,8 +10,8 @@
       [routerLinkActiveOptions]="{exact:true}"
       routerLinkActive="active"
       
-      class="nav-item ">
-        <a class="nav-link" routerLink="/">Home <span class="sr-only"></span></a>
+      class="nav-item kiran">
+        <a class="nav-link" routerLink="home">Home <span class="sr-only"></span></a>
       </li>
       <li
        routerLinkActive="active"
@@ -31,6 +31,12 @@
      
      
     </ul>
-    
+  <button
+  (click)="onLogOut()"
+      mat-raised-button
+      color="warn"
+      class="ms-auto me-3">
+      Log out
+    </button>    
   </div>
 </nav>

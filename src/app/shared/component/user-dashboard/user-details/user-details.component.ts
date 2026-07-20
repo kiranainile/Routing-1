@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 
 import { IUser } from 'src/app/shared/models/user';
@@ -30,9 +30,10 @@ export class UserDetailsComponent implements OnInit {
   }
 
   fetchUserDetails() {
-    this.userId = this._routes.snapshot.paramMap.get('userId')!;
-
-    if (this.userId) {
+    // this.userId = this._routes.snapshot.paramMap.get('userId')!;\
+    this._routes.params.subscribe((param:Params)=>{
+      this.userId =param['userId']
+      if (this.userId) {
       this._userService.fetchUserById(this.userId)
         .subscribe({
           next: (data) => {
@@ -43,6 +44,10 @@ export class UserDetailsComponent implements OnInit {
           }
         });
     }
+      
+    })
+
+    
   }
 
   onRemoveUser() {

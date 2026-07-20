@@ -1,4 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%;  background-color: #ededed;}
+html, body { height: 100%;  }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.user-dashboard{
+    background-color:hotpink;
+    min-height: 100vh;
+    padding:20px;
+}
+/* .products-dashboard{
+      background-color: rgb(134, 20, 98);
+    min-height: 100vh;
+    padding:20px;
+
+} */
+.products-dashboard{
+    min-height: calc(100vh - 56px); /* navbar ki height hata kar */
+    background-color: hwb(67 0% 0% / 0.352);
+    padding: 20px;
+}
+.fair-dashboard{
+    background-color: antiquewhite;
+    padding: 20px;
+        min-height: 100vh;
+
+}

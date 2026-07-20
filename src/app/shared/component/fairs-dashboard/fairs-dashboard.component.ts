@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Ifairs } from '../../models/fairs';
+import { FairService } from '../../services/fair.service';
 
 @Component({
   selector: 'app-fairs-dashboard',
@@ -6,10 +8,27 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./fairs-dashboard.component.css']
 })
 export class FairsDashboardComponent implements OnInit {
+  fairsArr:Ifairs[]=[]
 
-  constructor() { }
+  constructor(
+    private _fairsService:FairService
+  ) { }
 
   ngOnInit(): void {
+    this.getFairsDetails()
+  }
+
+
+  getFairsDetails(){
+    this._fairsService.fetchFairs()
+    .subscribe({
+      next:data=>{
+        this.fairsArr=data
+      },
+      error:err=>{
+        console.log(err);
+      }
+    })
   }
 
 }

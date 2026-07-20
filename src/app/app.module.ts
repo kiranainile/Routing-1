@@ -29,6 +29,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { UserFormComponent } from './shared/component/user-dashboard/user-form/user-form.component';
 import { UserDetailsComponent } from './shared/component/user-dashboard/user-details/user-details.component';
 import { PageNotFoundComponent } from './shared/component/page-not-found/page-not-found.component';
+import { FairCardComponent } from './shared/component/fairs-dashboard/fair-card/fair-card.component';
+import { FairDetailsComponent } from './shared/component/fairs-dashboard/fair-details/fair-details.component';
+import { AuthComponent } from './shared/component/auth/auth.component';
+// import { AuthComponent } from './auth/auth.component';
 
 
 @NgModule({
@@ -45,7 +49,10 @@ import { PageNotFoundComponent } from './shared/component/page-not-found/page-no
     GetConfirmationComponent,
     UserFormComponent,
     UserDetailsComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    FairCardComponent,
+    FairDetailsComponent,
+    AuthComponent
   ],
 
   imports: [

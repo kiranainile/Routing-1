@@ -32,7 +32,7 @@ export class ProductService{
             pname:'samsun tv',
             pid:'125',
             pstatus:'Delivered',
-            canReturn:0
+            canReturn:1
 
         },
          {
@@ -40,7 +40,7 @@ export class ProductService{
             pid:'126',
           pstatus:'In-progress',
 
-            canReturn:0
+            canReturn:1
 
         },
     ]

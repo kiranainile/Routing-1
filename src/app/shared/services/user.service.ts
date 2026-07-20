@@ -15,7 +15,7 @@ export class UserService{
     userId: '101',
     userRole: 'Candidate', 
     profileDescription: 'Angular Developer with 3 years experience',
-    profileImage: 'assets/profileImage.png',
+    profileImage: 'assets/gir.jpg',
     skills: ['Angular', 'TypeScript', 'JavaScript', 'Bootstrap'],
     experienceYears: '1 to 3 years',
     isActive: true,
